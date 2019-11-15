@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		511690A6237F6D1500D2ABD0 /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511690A5237F6D1500D2ABD0 /* MarqueeLabel.swift */; };
 		5157B76023756098005C795E /* MusicPlayerMini.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5157B75F23756098005C795E /* MusicPlayerMini.xib */; };
 		5157B762237560D2005C795E /* MusicPlayerMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5157B761237560D2005C795E /* MusicPlayerMini.swift */; };
 		5157B764237560DA005C795E /* DesignSliderProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5157B763237560DA005C795E /* DesignSliderProgress.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		511690A5237F6D1500D2ABD0 /* MarqueeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		5157B75F23756098005C795E /* MusicPlayerMini.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicPlayerMini.xib; sourceTree = "<group>"; };
 		5157B761237560D2005C795E /* MusicPlayerMini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerMini.swift; sourceTree = "<group>"; };
 		5157B763237560DA005C795E /* DesignSliderProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignSliderProgress.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				DCDFF6E92373DA93002A45EF /* ViewController.swift */,
 				5157B761237560D2005C795E /* MusicPlayerMini.swift */,
 				5157B763237560DA005C795E /* DesignSliderProgress.swift */,
+				511690A5237F6D1500D2ABD0 /* MarqueeLabel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				DC67F45C237A9F5B006F6278 /* dummySongList.swift in Sources */,
 				DC67F458237A9F42006F6278 /* EqualizerView.swift in Sources */,
 				AC054D092374033100E28931 /* PlayView.swift in Sources */,
+				511690A6237F6D1500D2ABD0 /* MarqueeLabel.swift in Sources */,
 				DCA99FFB23742D5B00312B37 /* MusicPlayerAlbumImage.swift in Sources */,
 				DC501483236C70F300AD39F1 /* VTune.xcdatamodeld in Sources */,
 				AC054D0D23740AF300E28931 /* Lirik.swift in Sources */,
@@ -443,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X29NU3BMGT;
+				DEVELOPMENT_TEAM = Y6FVCC3X3F;
 				INFOPLIST_FILE = VTune/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -462,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X29NU3BMGT;
+				DEVELOPMENT_TEAM = Y6FVCC3X3F;
 				INFOPLIST_FILE = VTune/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

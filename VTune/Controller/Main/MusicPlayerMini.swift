@@ -14,10 +14,12 @@ class MusicPlayerMini: UIView
 {
     
     @IBOutlet weak var photoAlbum: UIImageView!
-    @IBOutlet weak var songTitle: UILabel!
+    @IBOutlet weak var songTitle: MarqueeLabel!
     @IBOutlet weak var sliderProgress: UISlider!
     @IBOutlet weak var previewButtonOutlet: UIButton!
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var NextButtonOutlet: UIButton!
     
 }
+
+
