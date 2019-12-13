@@ -39,12 +39,14 @@ class MusicPlayerMini: UIView
     }
     
     @IBAction func playButton(_ sender: Any) {
-        if mediaPlayer.playbackState == .playing{
+        if AudioUtilities.audioRunning{
             playButtonOutlet.setImage(#imageLiteral(resourceName: "Play Button (Small)"), for: .normal)
-            mediaPlayer.pause()
+            AudioUtilities.pauseAudio()
+            //mediaPlayer.pause()
         }else{
             playButtonOutlet.setImage(#imageLiteral(resourceName: "Pause Button (Small)"), for: .normal)
-            mediaPlayer.play()
+            AudioUtilities.pauseAudio()
+            //mediaPlayer.play()
         }
         
     }

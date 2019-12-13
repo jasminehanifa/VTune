@@ -103,7 +103,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UINavigationBarDele
         }
         mediaPlayer.beginGeneratingPlaybackNotifications()
         mediaPlayer.setQueue(with: songIdentifiers)
-        mediaPlayer.play()
+        //mediaPlayer.play()
+        AudioUtilities.pauseAudio()
+        
         getData()
     }
     

@@ -57,12 +57,14 @@ class PlayView: UIView {
     }
     
     @IBAction func btnPlay(_ sender: UIButton) {
-        if mediaPlayer.playbackState == .playing{
+        if AudioUtilities.audioRunning{
             btnPlay.setImage(#imageLiteral(resourceName: "Play Button (Big)"), for: .normal)
-            mediaPlayer.pause()
+            AudioUtilities.pauseAudio()
+            //mediaPlayer.pause()
         }else{
             btnPlay.setImage(#imageLiteral(resourceName: "Pause Button (Big)"), for: .normal)
-            mediaPlayer.play()
+            AudioUtilities.pauseAudio()
+            //mediaPlayer.play()
         }
     }
 

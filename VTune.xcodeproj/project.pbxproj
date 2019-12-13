@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E08CD6E238455C200745BFF /* Menunggu Kamu (OST Jelita Sejuba).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4E08CD69238455C000745BFF /* Menunggu Kamu (OST Jelita Sejuba).mp3 */; };
-		4E08CD6F238455C200745BFF /* Goyang Dumang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4E08CD6A238455C000745BFF /* Goyang Dumang.mp3 */; };
-		4E08CD70238455C200745BFF /* Pesta.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4E08CD6B238455C100745BFF /* Pesta.mp3 */; };
-		4E08CD71238455C200745BFF /* Sempurna.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4E08CD6C238455C100745BFF /* Sempurna.mp3 */; };
-		4E08CD72238455C200745BFF /* Harus Bahagia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4E08CD6D238455C200745BFF /* Harus Bahagia.mp3 */; };
 		4E08CD742384563D00745BFF /* AudioUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08CD732384563D00745BFF /* AudioUtilities.swift */; };
 		4E08CD762384565400745BFF /* GraphUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08CD752384565400745BFF /* GraphUtility.swift */; };
 		5157B76023756098005C795E /* MusicPlayerMini.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5157B75F23756098005C795E /* MusicPlayerMini.xib */; };
@@ -58,11 +53,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E08CD69238455C000745BFF /* Menunggu Kamu (OST Jelita Sejuba).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Menunggu Kamu (OST Jelita Sejuba).mp3"; sourceTree = "<group>"; };
-		4E08CD6A238455C000745BFF /* Goyang Dumang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Goyang Dumang.mp3"; sourceTree = "<group>"; };
-		4E08CD6B238455C100745BFF /* Pesta.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pesta.mp3; sourceTree = "<group>"; };
-		4E08CD6C238455C100745BFF /* Sempurna.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sempurna.mp3; sourceTree = "<group>"; };
-		4E08CD6D238455C200745BFF /* Harus Bahagia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Harus Bahagia.mp3"; sourceTree = "<group>"; };
 		4E08CD732384563D00745BFF /* AudioUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUtilities.swift; sourceTree = "<group>"; };
 		4E08CD752384565400745BFF /* GraphUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUtility.swift; sourceTree = "<group>"; };
 		5157B75F23756098005C795E /* MusicPlayerMini.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicPlayerMini.xib; sourceTree = "<group>"; };
@@ -165,7 +155,6 @@
 		DC501477236C70F300AD39F1 /* VTune */ = {
 			isa = PBXGroup;
 			children = (
-				DC7496852382E681004B7F42 /* Songs */,
 				DC50148F236C716400AD39F1 /* Model */,
 				DC501490236C716D00AD39F1 /* View */,
 				DC501491236C717B00AD39F1 /* Controller */,
@@ -212,18 +201,6 @@
 				DCDFF6DA2372F324002A45EF /* MusicPlayer */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		DC7496852382E681004B7F42 /* Songs */ = {
-			isa = PBXGroup;
-			children = (
-				4E08CD69238455C000745BFF /* Menunggu Kamu (OST Jelita Sejuba).mp3 */,
-				4E08CD6C238455C100745BFF /* Sempurna.mp3 */,
-				4E08CD6A238455C000745BFF /* Goyang Dumang.mp3 */,
-				4E08CD6B238455C100745BFF /* Pesta.mp3 */,
-				4E08CD6D238455C200745BFF /* Harus Bahagia.mp3 */,
-			);
-			path = Songs;
 			sourceTree = "<group>";
 		};
 		DCDFF6D92372F31E002A45EF /* Main */ = {
@@ -338,25 +315,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E08CD6E238455C200745BFF /* Menunggu Kamu (OST Jelita Sejuba).mp3 in Resources */,
 				AC054D072374031800E28931 /* PlayView.xib in Resources */,
 				DB52F03D237409270048B55D /* albumArtViewController.xib in Resources */,
-				4E08CD6F238455C200745BFF /* Goyang Dumang.mp3 in Resources */,
 				DC501488236C70F500AD39F1 /* LaunchScreen.storyboard in Resources */,
 				DC67F452237A9EE2006F6278 /* EqualizerView.xib in Resources */,
 				EF1C58A6237416B900694932 /* SongListTableViewCell.xib in Resources */,
-				4E08CD71238455C200745BFF /* Sempurna.mp3 in Resources */,
 				AC9F801623827A8F00752432 /* Slide.xib in Resources */,
 				DCA99FF5237421A200312B37 /* MusicPlayerLyricHeader.xib in Resources */,
 				DC501485236C70F500AD39F1 /* Assets.xcassets in Resources */,
-				4E08CD72238455C200745BFF /* Harus Bahagia.mp3 in Resources */,
 				AC054D0B23740AE300E28931 /* Lirik.xib in Resources */,
 				DCA99FF923742CA500312B37 /* MusicPlayerAlbumImage.xib in Resources */,
 				5157B76023756098005C795E /* MusicPlayerMini.xib in Resources */,
 				DC501480236C70F300AD39F1 /* Main.storyboard in Resources */,
 				AC9F80142382798E00752432 /* Onboarding.storyboard in Resources */,
 				DC60DADE237036320070F386 /* MusicPlayer.storyboard in Resources */,
-				4E08CD70238455C200745BFF /* Pesta.mp3 in Resources */,
 				DCA99FF123741D6200312B37 /* MusicPlayerHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4H65A594JP;
+				DEVELOPMENT_TEAM = 85YSJX97S8;
 				INFOPLIST_FILE = VTune/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -563,7 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y6FVCC3X3F;
+				DEVELOPMENT_TEAM = 85YSJX97S8;
 				INFOPLIST_FILE = VTune/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
