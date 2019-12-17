@@ -39,21 +39,19 @@ class PlayView: UIView {
 //    let transferSender:UIButton
     func getData(){
         if let nowPlaying = mediaPlayer.nowPlayingItem{
-        nowPlayingSongTitle = nowPlaying.title!
-        nowPlayingSongSinger = nowPlaying.artist!
-        nowPlayingTotalDuration = Int(nowPlaying.playbackDuration)
-        referenceAlbumImageView?.nowPlayingAlbumImage.image = nowPlaying.artwork?.image(at: CGSize(width: (referenceAlbumImageView?.nowPlayingAlbumImage.frame.width)!, height: (referenceAlbumImageView?.nowPlayingAlbumImage.frame.height)!))
-        referenceHeaderView?.nowPlayingSongTitle.text = nowPlayingSongTitle
-        referenceHeaderView?.nowPlayingSinger.text = nowPlayingSongSinger
-        referenceAlbumImageView?.nowPlayingAlbumImage.image = nowPlayingAlbumImage
-        print("Fungsi getData() Berhasil")
+            var duration = MPTotalDuration?.text
+            MPSongTitle?.text = nowPlaying.title!
+            MPSongSinger?.text = nowPlaying.artist!
+            duration = String(Int(nowPlaying.playbackDuration))
+            MPAlbumImage!.image = nowPlaying.artwork?.image(at: CGSize(width: (MPAlbumImage!.frame.width), height: (MPAlbumImage!.frame.height)))
+                referenceHeaderView?.nowPlayingSongTitle.text = MPSongTitle?.text
+                referenceHeaderView?.nowPlayingSinger.text = MPSongSinger?.text
+            referenceAlbumImageView?.nowPlayingAlbumImage.image = MPAlbumImage?.image
+            let minutes = Int(duration!)!/60
+            let seconds = Int(duration!)! - minutes * 60
+            timeDuration.text = String(format: "%02d:%02d", minutes,seconds) as String
+            print("Fungsi getData() Berhasil")
         }
-    }
-    
-    func updateTotalDuration(){
-        let minutes = nowPlayingTotalDuration/60
-        let seconds = nowPlayingTotalDuration - minutes * 60
-        timeDuration.text = String(format: "%02d:%02d", minutes,seconds) as String
     }
     
     @IBAction func btnPlay(_ sender: UIButton) {
@@ -69,7 +67,6 @@ class PlayView: UIView {
     @IBAction func btnNext(_ sender: Any) {
         mediaPlayer.skipToNextItem()
         mediaPlayer.stop()
-        updateTotalDuration()
         getData()
         mediaPlayer.play()
     }
@@ -77,7 +74,6 @@ class PlayView: UIView {
     @IBAction func btnPrevious(_ sender: Any) {
         mediaPlayer.skipToPreviousItem()
         mediaPlayer.stop()
-        updateTotalDuration()
         getData()
         mediaPlayer.play()
     }

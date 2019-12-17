@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,24 +16,16 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Album Art Shadow" translatesAutoresizingMaskIntoConstraints="NO" id="1QN-LF-keM">
                     <rect key="frame" x="82" y="44" width="250" height="264"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90v-qS-Hvh">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90v-qS-Hvh">
                     <rect key="frame" x="97" y="0.0" width="220" height="220"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="220" id="aZG-dR-Dph"/>
-                        <constraint firstAttribute="height" constant="220" id="z0H-PB-liW"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstItem="90v-qS-Hvh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="97" id="A7t-JK-hau"/>
                 <constraint firstItem="1QN-LF-keM" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="77.999999999999943" id="Ayg-ZC-Fb0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="90v-qS-Hvh" secondAttribute="bottom" constant="10" id="O6X-Dy-fCu"/>
                 <constraint firstItem="1QN-LF-keM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="RSP-iu-QtD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1QN-LF-keM" secondAttribute="trailing" constant="82" id="RUz-tl-jDP"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="90v-qS-Hvh" secondAttribute="trailing" constant="97" id="eeL-aq-xP8"/>
-                <constraint firstItem="1QN-LF-keM" firstAttribute="top" secondItem="90v-qS-Hvh" secondAttribute="bottom" constant="-176" id="fzD-YW-dwB"/>
                 <constraint firstItem="1QN-LF-keM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="82" id="udV-F8-SDv"/>
-                <constraint firstItem="90v-qS-Hvh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zBc-ft-DO3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -33,3 +33,9 @@ var albumImageSmallView: UIImageView?
 var nowPlayingTitle: UILabel?
 var nowPlayingSinger: UILabel?
 var nowPlayingAlbum: UIImageView?
+
+//MusicPlayerViewController
+var MPAlbumImage: UIImageView?
+var MPSongTitle: UILabel?
+var MPSongSinger: UILabel?
+var MPTotalDuration: UILabel?

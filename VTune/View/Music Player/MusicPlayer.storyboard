@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YkH-ub-R2Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YkH-ub-R2Y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,9 +28,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1s-rg-rQl" userLabel="Music Player Control View">
                                 <rect key="frame" x="0.0" y="550.5" width="414" height="274.5"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zq-KY-Tkj">
+                                <rect key="frame" x="257" y="750" width="38" height="37"/>
+                                <state key="normal" image="Lyric Button Off"/>
+                                <connections>
+                                    <action selector="lyric:" destination="YkH-ub-R2Y" eventType="touchUpInside" id="V0A-Il-fUC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="rGI-k6-dtd" firstAttribute="trailing" secondItem="9zq-KY-Tkj" secondAttribute="trailing" constant="119" id="4iW-iT-JgX"/>
                             <constraint firstItem="rGI-k6-dtd" firstAttribute="trailing" secondItem="ehv-Nh-jEh" secondAttribute="trailing" id="557-tR-beT"/>
                             <constraint firstItem="Z1s-rg-rQl" firstAttribute="bottom" secondItem="rGI-k6-dtd" secondAttribute="bottom" constant="17" id="5mx-Ma-JHZ"/>
                             <constraint firstItem="fra-Rx-i9V" firstAttribute="leading" secondItem="rGI-k6-dtd" secondAttribute="leading" id="8WI-ZS-hpX"/>
@@ -41,11 +49,13 @@
                             <constraint firstItem="kKn-Nv-qum" firstAttribute="top" secondItem="rGI-k6-dtd" secondAttribute="top" id="XC4-JO-NjS"/>
                             <constraint firstItem="Z1s-rg-rQl" firstAttribute="top" secondItem="ehv-Nh-jEh" secondAttribute="bottom" constant="-5" id="YFw-6X-daF"/>
                             <constraint firstItem="ehv-Nh-jEh" firstAttribute="top" secondItem="fra-Rx-i9V" secondAttribute="bottom" constant="5.5" id="d5x-Bt-HcR"/>
+                            <constraint firstItem="rGI-k6-dtd" firstAttribute="bottom" secondItem="9zq-KY-Tkj" secondAttribute="bottom" constant="21" id="kMP-iA-by0"/>
                             <constraint firstItem="kKn-Nv-qum" firstAttribute="height" secondItem="fra-Rx-i9V" secondAttribute="height" multiplier="1:3" id="pGS-L4-y8w"/>
                             <constraint firstItem="rGI-k6-dtd" firstAttribute="trailing" secondItem="kKn-Nv-qum" secondAttribute="trailing" id="qyC-dr-7E9"/>
                             <constraint firstItem="Z1s-rg-rQl" firstAttribute="leading" secondItem="rGI-k6-dtd" secondAttribute="leading" id="rBq-9a-IDH"/>
                             <constraint firstItem="kKn-Nv-qum" firstAttribute="height" secondItem="ehv-Nh-jEh" secondAttribute="height" multiplier="1:2" id="reV-w5-zyH"/>
                             <constraint firstItem="rGI-k6-dtd" firstAttribute="trailing" secondItem="Z1s-rg-rQl" secondAttribute="trailing" id="uaQ-Yr-xAE"/>
+                            <constraint firstItem="9zq-KY-Tkj" firstAttribute="leading" secondItem="rGI-k6-dtd" secondAttribute="leading" constant="257" id="xd6-zi-3hi"/>
                             <constraint firstItem="kKn-Nv-qum" firstAttribute="height" secondItem="Z1s-rg-rQl" secondAttribute="height" multiplier="1:3" id="xhD-Uz-R92"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rGI-k6-dtd"/>
@@ -74,4 +84,7 @@
             <point key="canvasLocation" x="555" y="105"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lyric Button Off" width="38" height="37"/>
+    </resources>
 </document>

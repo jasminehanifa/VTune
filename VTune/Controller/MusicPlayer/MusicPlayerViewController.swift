@@ -106,17 +106,17 @@ class MusicPlayerViewController: UIViewController {
         getData()
         updateTotalDuration()
 
-//        referenceAlbumImageView?.nowPlayingAlbumImage.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        referenceAlbumImageView?.nowPlayingAlbumImage.layer.shadowOpacity = 0.3
-//        referenceAlbumImageView?.nowPlayingAlbumImage.layer.shadowRadius = 10
-        
         referencePlayView?.volumeSlider.self.setMaximumTrackImage(#imageLiteral(resourceName: "Minimal Slider"), for: .normal)
         referencePlayView?.volumeSlider.self.setMinimumTrackImage(#imageLiteral(resourceName: "Slider Filler"), for: .normal)
         referencePlayView?.volumeSlider.self.setThumbImage(#imageLiteral(resourceName: "Slider Dot"), for: .normal)
         referencePlayView?.timeSlider.setMinimumTrackImage(#imageLiteral(resourceName: "Slider Filler"), for: .normal)
         referencePlayView?.timeSlider.setMaximumTrackImage(#imageLiteral(resourceName: "Minimal Slider"), for: .normal)
+//        referencePlayView?.btnLirikOutlet.isHidden = true
         
-//        MPVolumeView.setVolume(0.5)
+        MPAlbumImage = referenceAlbumImageView?.nowPlayingAlbumImage
+        MPSongTitle = referenceHeaderView?.nowPlayingSongTitle
+        MPSongSinger = referenceHeaderView?.nowPlayingSinger
+        MPTotalDuration = referencePlayView?.timeDuration
     //===========================================================================================================================
         //Function For Render Waveform View (from: rajabun)
         //===========================================================================================================================
@@ -273,6 +273,12 @@ class MusicPlayerViewController: UIViewController {
         vc.referenceMusicPlayerMini?.photoAlbum.image = nowPlayingAlbumImage
     }
     
+    @IBAction func lyric(_ sender: UIButton) {
+        if let nowPlaying = MPMusicPlayerController.applicationMusicPlayer.nowPlayingItem{
+            MXMLyricsAction.sharedExtension()?.findLyricsForSong(withTitle: nowPlaying.title, artist: nowPlaying.artist, album: nowPlaying.albumTitle, artWork: nowPlaying.artwork?.image(at: CGSize(width: 100, height: 100)), currentProgress: mediaPlayer.currentPlaybackTime, trackDuration: nowPlaying.playbackDuration, for: self, sender: sender, competionHandler: nil)
+        }
+//        print("YES")
+    }
     
 }
 
