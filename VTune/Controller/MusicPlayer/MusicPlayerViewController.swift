@@ -22,7 +22,6 @@ protocol GetLyricDelegate
     func getLyric(sender: UIButton)
 }
 
-
 class MusicPlayerViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
@@ -55,24 +54,12 @@ class MusicPlayerViewController: UIViewController {
     let envelopeLayer = CAShapeLayer()
     
     var pageNumber = 0
-    //var signalToParameter: Float = 0.0
     //===========================================================================================================================
     
     //===========================================================================================================================
     //Global Property For Sample Sound (from: rajabun)
     //===========================================================================================================================
-    let samples: [Float] =
-    {
-        guard let samples = AudioUtilities.getAudioSamples(
-            forResource: "Sempurna",
-            withExtension: "mp3")
-        else
-        {
-                fatalError("Unable to parse the audio resource.")
-        }
-        
-        return samples
-    }()
+    var samples: [Float] = [0.0]
     //===========================================================================================================================
     
     //===========================================================================================================================
@@ -123,8 +110,7 @@ class MusicPlayerViewController: UIViewController {
         renderGraphView()
         //===========================================================================================================================
                
-//        AudioUtilities.configureAudioUnit(signalProvider: self)
-               
+          getSampleAndPlay()
         //===========================================================================================================================
         //Function For Prepare Haptics (from: rajabun)
         //===========================================================================================================================
@@ -169,6 +155,61 @@ class MusicPlayerViewController: UIViewController {
     }
     //==========================================================================================================================
     
+    //===========================================================================================================================
+    //Global Function For Get Sample and Play Sound (from: rajabun)
+    //===========================================================================================================================
+    func getSampleAndPlay()
+    {
+        //let musicPlayerVC = MusicPlayerViewController()
+        //===========================================================================================================================
+        //Stop the Audio Hardware in Audio Unit
+        //===========================================================================================================================
+        AudioUtilities.stopAudioFirstTime()
+        //===========================================================================================================================
+        
+        //===========================================================================================================================
+        //Function For Play Selected Song From MusicKit
+        //===========================================================================================================================
+        mediaPlayer.prepareToPlay()
+        mediaPlayer.play()
+        //===========================================================================================================================
+        
+        //===========================================================================================================================
+        //Property For Get Sample Sound From MusicKit
+        //===========================================================================================================================
+        let samplesFromMusicKit: [Float] =
+        {
+            guard let samples = AudioUtilities.getAudioSamples(
+                urlFromMusicKit: mediaPlayer.nowPlayingItem?.assetURL)
+            else
+            {
+                    fatalError("Unable to parse the audio resource.")
+            }
+        
+            return samples
+        }()
+        samples = samplesFromMusicKit
+        print("Asset = ", mediaPlayer.nowPlayingItem?.assetURL)
+        print("samplesFromMusicKit =", samplesFromMusicKit.count)
+        //===========================================================================================================================
+        mediaPlayer.stop()
+        DispatchQueue.global(qos: .userInitiated).async
+        {
+            AudioUtilities.configureAudioUnit(signalProvider: self)
+        }
+    }
+    //===========================================================================================================================
+    
+       func playConvertedSong()
+       {
+           AudioUtilities.configureAudioUnit(signalProvider: self)
+       }
+       
+       func pauseConvertedSong()
+       {
+           AudioUtilities.pauseAudio()
+       }
+       
     func setView(){
         if let referenceHeaderView = Bundle.main.loadNibNamed("MusicPlayerHeader", owner: self, options: nil)?.first as? MusicPlayerHeader{
             headerView.addSubview(referenceHeaderView)
@@ -319,7 +360,12 @@ extension MusicPlayerViewController: SignalProvider
         outputSignal = page
 
         forHapticParameter = outputSignal.filter { $0 >= 0}
+        
+        //For Damage Control/High Gain Sound :
         let signalToParameter = forHapticParameter[100]
+        
+        //For Laskar Pelangi/Low Gain Sound :
+        //let signalToParameter = outputSignal[100]
         
         //===========================================================================================================================
         //Prepare for Haptic (from: rajabun)
@@ -451,9 +497,6 @@ extension MusicPlayerViewController
                    fatalError("Engine Creation Error: \(error)")
                }
                
-               // Mute audio to reduce latency for collision haptics.
-               //engine.playsHapticsOnly = true
-               
                // The stopped handler alerts you of engine stoppage.
                engine.stoppedHandler =
                 { reason in
@@ -584,11 +627,6 @@ extension MusicPlayerViewController
                     self.engineNeedsStart = false
                 })
             }
-        }
-        
-        func continuousPalettePressed()
-        {
-            //Semua isinya dipindahin ke fungsi getSignal()
         }
 }
 
